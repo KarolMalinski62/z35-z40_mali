@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Kolorów</title>
+    <script>
+        function showInput() {
+            document.getElementById("inputSection").style.display = "block";
+        }
+
+        function checkColor() {
+            var input = document.getElementById("colorInput").value.toLowerCase();
+            var color;
+
+            if (input == "1" || input == "czerwony") {
+                color = "red";
+                document.getElementById("result").innerHTML = '<h1 style="color:' + color + '; font-size: 7;">Wczytałeś kolor czerwony</h1>';
+            } else if (input == "2" || input == "niebieski") {
+                color = "blue";
+                document.getElementById("result").innerHTML = '<h1 style="color:' + color + '; font-size: 1;">Wczytałeś kolor niebieski</h1>';
+            } else {
+                alert("Nieprawidłowy wybór.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1 style="color: green;">MENU:</h1>
+<ol>
+    <li style="color: red;" onclick="checkColor()"> CZERWONY</li>
+    <li style="color: blue;" onclick="checkColor()"> NIEBIESKI</li>
+</ol>
+
+<button onclick="showInput()">Oblicz</button>
+
+<div id="inputSection" style="display: none;">
+    <input type="text" id="colorInput" placeholder="Podaj kolor">
+    <button onclick="checkColor()">Sprawdź</button>
+</div>
+
+<div id="result"></div>
+
+</body>
+</html>

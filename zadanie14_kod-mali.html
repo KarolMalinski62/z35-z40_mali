@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zad14_kod_mali</title>
+</head>
+<style>
+textarea{
+    width: 838px;
+    height: 579px;
+}
+</style>
+<body>
+    <textarea>
+<!-- Plik zadanie14_kow.html -->
+<html>
+<head>
+  <script type="text/javascript">
+    function okno_closeMali()
+            {
+            window.close()
+            }
+    function rozkladNaUlamki() {
+      // Wczytaj wartość zmiennej m_kow
+      var m_kow = prompt("Podaj liczbę naturalną większą od 0 (m):");
+
+      // Sprawdź poprawność danych
+      if (isNaN(m_kow) || m_kow <= 0 || !Number.isInteger(Number(m_kow))) {
+        alert("Błędne dane! Podaj poprawną liczbę naturalną większą od 0.");
+        return;
+      }
+
+      // Konwertuj m_kow na liczbę całkowitą
+      m_kow = parseInt(m_kow);
+
+      // Zmienna przechowująca wynikowy ciąg ułamków egipskich
+      var ulamkiEgipskie = [];
+      var dzialanie = "1 / " + m_kow + " = ";
+      var liczbaUlamkow = 0;
+
+      // Algorytm rozkładu ułamka egipskiego na trzy ułamki
+      for (var i = 2; i <= m_kow; i++) {
+        var ulamek1 = 1 / i;
+        var ulamek2 = 1 / (i * 2);
+        var ulamek3 = 1 / (i * 3);
+
+        ulamkiEgipskie.push(ulamek1, ulamek2, ulamek3);
+        liczbaUlamkow += 3;
+
+        dzialanie += "1 / " + i + " + 1 / " + (i * 2) + " + 1 / " + (i * 3) + " + ";
+
+        // Zakończ pętlę, gdy osiągniesz 3 ułamki
+        if (liczbaUlamkow >= 3) {
+          break;
+        }
+      }
+
+      // Usuń ostatni "+" z działania
+      dzialanie = dzialanie.slice(0, -2);
+
+      // Wyświetl wynik
+      var wynik = document.getElementById('wynik_kow');
+      wynik.innerHTML = "Rozkład liczby 1/" + m_kow + " na trzy ułamki egipskie: " + dzialanie;
+      wynik.style.color = "green";
+      wynik.style.fontSize = "16px";
+    }
+  </script>
+</head>
+<body>
+  <button onclick="rozkladNaUlamki()">Rozkład na trzy ułamki egipskie</button>
+  <input type="button" value="zamknij okno" onclick="okno_closeMali()">
+  <div id="wynik_kow"></div>
+</body>
+</html>
+
+    </textarea>
+</body>
+</html>

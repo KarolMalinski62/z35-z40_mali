@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 32</title>
+    <script type="text/javascript">
+        // Definiowanie konstruktora (klasy)
+        function Uczen(nr, nazwa, pola) {
+            this.nr = nr;
+            this.nazwa_obiektu = nazwa;
+            this.pola = pola;
+        }
+
+        // Dodawanie metody do konstruktora z użyciem prototypu
+        Uczen.prototype.wyswietl = function() {
+            document.write("Nr w dzienniku: " + this.nr + "<br>");
+            document.write("Nazwa obiektu: " + this.nazwa_obiektu + "<br>");
+            document.write("Pola (Właściwości): " + this.pola.join(", ") + "<br>");
+        };
+
+        // Tworzenie obiektów
+        var uczen1 = new Uczen(1, "Samochod", ["kolor", "rok produkcji", "marka"]);
+        var uczen2 = new Uczen(2, "Ciezarowka", ["ladownosc", "rok produkcji", "marka"]);
+        var uczen3 = new Uczen(3, "Dom", ["wysokosc", "powierzchnia", "rodzaj"]);
+
+        // Wywołanie metody dla każdego obiektu
+        function wyswietlUczniow() {
+            uczen1.wyswietl();
+            uczen2.wyswietl();
+            uczen3.wyswietl();
+        }
+
+        // Dopisanie nowej właściwości poza ciałem obiektu
+        Uczen.opis = "Uczeń szkoły";
+
+        // Dodanie nowej metody poza ciałem obiektu
+        function pokazOpis() {
+            document.write("Opis: " + Uczen.opis + "<br>");
+        }
+    </script>
+</head>
+<body>
+    <h1>Zadanie 32</h1>
+
+    <h2>Wyświetlanie informacji o uczniach</h2>
+    <button onclick="wyswietlUczniow()">Wyświetl informacje o uczniach</button>
+
+    <h2>Opis</h2>
+    <button onclick="pokazOpis()">Wyświetl opis</button>
+</body>
+</html>

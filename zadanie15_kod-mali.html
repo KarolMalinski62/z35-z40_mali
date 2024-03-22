@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zad15_kod_mali</title>
+</head>
+<style>
+textarea{
+    width: 838px;
+    height: 579px;
+}
+</style>
+<body>
+    <textarea>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Zadanie 15</title>
+        </head>
+        <body>
+            <button id="zadanie15Button">Uruchom zadanie</button>
+            <button id="zamknijButton" style="display:none;">Zamknij</button>
+            <div id="wyniki"></div>
+        
+            <script>
+                document.getElementById('zadanie15Button').addEventListener('click', function () {
+                    let m = prompt("Podaj wartość m:");
+                    if (m !== null && m !== "") {
+                        rozwiazZadanie(parseInt(m));
+                    } else {
+                        alert("Wprowadź poprawną wartość dla m.");
+                    }
+                });
+        
+                function rozwiazZadanie(m) {
+                    let wynik = `Dla m=${m}: 1/${m} = 1/${2 * m} + 1/${2 * m}`;
+                    document.getElementById('wyniki').innerHTML += `<p>${wynik}</p>`;
+                    document.getElementById('zamknijButton').style.display = 'block';
+                }
+        
+                document.getElementById('zamknijButton').addEventListener('click', function () {
+                    window.close();
+                });
+            </script>
+        </body>
+        </html>
+        
+    </textarea>
+</body>
+</html>

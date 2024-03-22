@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zad16_kod_mali</title>
+</head>
+<style>
+textarea{
+    width: 838px;
+    height: 579px;
+}
+</style>
+<body>
+    <textarea>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Zadanie 16</title>
+        </head>
+        <body>
+            <button id="zadanie16Button">Nazwisko_ucznia-Zadanie16</button>
+            <div id="wyniki16"></div>
+        
+            <script>
+                function okno_closeMali()
+                    {
+                    window.close()
+                    }
+                document.getElementById('zadanie16Button').addEventListener('click', function () {
+                    obliczeniaWgWzoru();
+                });
+        
+                function obliczeniaWgWzoru() {
+                    let A = prompt("Podaj pierwszą liczbę A:");
+                    let B = prompt("Podaj drugą liczbę B:");
+        
+                    if (A !== null && B !== null && !isNaN(A) && !isNaN(B)) {
+                        A = parseInt(A);
+                        B = parseInt(B);
+        
+                        document.write(`<p>Wczytane liczby: A=${A} B=${B}</p>`);
+                        
+                        document.write(`<p>wygląd ekranu dla A=${A} B=${B} np.</p>`);
+                        
+                        document.write(`(${A} + ${B})^3= ${A}^3 + 3*(${A}^2)*${B} + 3*${A}*(${B}^2) + ${B}^3 = ${Math.pow(A + B, 3)}`);
+        
+                        document.write('<br><input type="button" value="zamknij okno" onclick="okno_closeMali()">');
+                    } else {
+                        alert("Wprowadź poprawne liczby dla A i B.");
+                    }
+                }
+            </script>
+        </body>
+        </html>
+        
+    </textarea>
+</body>
+</html>

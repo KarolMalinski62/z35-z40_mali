@@ -1,0 +1,48 @@
+<html>
+<body style="background-color: silver;">
+<div id="result" style="font-size: 20px; color: green;"></div>
+
+<script language="JavaScript">
+// Dane osobowe
+var imie = "Jan";
+var nazwisko = "Kowalski";
+var dzien_urodzenia = 18;
+var miesiac_urodzenia = 5;
+var rok_urodzenia = 1989;
+
+// Obliczenie liczby liter w imieniu i nazwisku
+var liczba1 = imie.length;
+var liczba2 = liczba1 + 7;
+var liczba3 = nazwisko.length;
+var liczba4 = liczba3 + 4;
+
+// Wyświetlenie danych osobowych
+document.getElementById("result").innerHTML = "Imię i nazwisko: " + imie + " " + nazwisko + "<br>";
+document.getElementById("result").innerHTML += "Liczba liter w imieniu: " + liczba1 + "<br>";
+document.getElementById("result").innerHTML += "Liczba liter w nazwisku: " + liczba3 + "<br>";
+document.getElementById("result").innerHTML += "Obliczone liczby: " + liczba1 + ", " + liczba2 + ", " + liczba3 + ", " + liczba4 + "<br>";
+
+// Funkcja do wyboru opcji
+function wybierzOpcje() {
+    var opcja_kow = prompt("Podaj numer opcji:");
+
+    if (opcja_kow == 3) {
+        document.getElementById("result").innerHTML += "<font color=blue size=" + (40 + (18 % 7)) + ">Jesteś w opcji 3 --> teoria</font><br>";
+    } else if (opcja_kow == 29) {
+        var liczba_kow = prompt("Podaj liczbę:");
+        if ((liczba_kow >= liczba1) && (liczba_kow < liczba2)) {
+            document.getElementById("result").innerHTML += "<font color=green size=" + (40 + (18 % 7)) + ">" + liczba_kow + " należy do przedziału [" + liczba1 + ", " + liczba2 + ")</font><br>";
+        } else {
+            document.getElementById("result").innerHTML += "<font color=red size=" + (40 + (18 % 7)) + ">" + liczba_kow + " nie należy do przedziału [" + liczba1 + ", " + liczba2 + ")</font><br>";
+        }
+    } else if (opcja_kow == 58) {
+        document.getElementById("result").innerHTML += "<font color=green size=" + (40 + (18 % 7)) + ">Jesteś w opcji 58</font><br>";
+    } else {
+        document.getElementById("result").innerHTML += "<font color=red size=" + (40 + (18 % 7)) + ">Nie ma takiej opcji</font><br>";
+    }
+}
+wybierzOpcje();
+</script>
+
+</body>
+</html>

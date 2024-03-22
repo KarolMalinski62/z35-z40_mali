@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 31</title>
+    <script type="text/javascript">
+        var Dom = {
+            nazwisko: 'Kowalski',
+            imie: 'Jan',
+            wysokosc: '2 piętra', 
+            powierzchnia: '100 m^2', 
+            Dom_wyswietl_nazwisko: function() {
+                document.write("Nazwisko: " + this.nazwisko + "<br>");
+                document.write("Imię: " + this.imie + "<br>");
+                document.write("Wysokość: " + this.wysokosc + "<br>"); 
+                document.write("Powierzchnia: " + this.powierzchnia + "<br>"); 
+            }
+        };
+
+        function wyswietlDom() {
+            Dom.Dom_wyswietl_nazwisko();
+        }
+
+        Dom.wiek = 30;
+
+        Dom.Dom_pokaz_wiek = function() {
+            document.write("Wiek: " + this.wiek + "<br>");
+        };
+    </script>
+</head>
+<body>
+    <h1>Zadanie 31</h1>
+
+    <h2>Obiekt Dom</h2>
+    <button onclick="wyswietlDom()">Wyświetl informacje o Domu</button>
+
+</body>
+</html>
